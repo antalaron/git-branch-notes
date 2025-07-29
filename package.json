@@ -1,0 +1,64 @@
+{
+  "name": "git-branch-notes",
+  "displayName": "Git Branch Notes",
+  "description": "Take per-branch notes for git branches in VS Code.",
+  "version": "0.0.1",
+  "publisher": "antalaron",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "author": {
+    "name": "Antal Áron",
+    "email": "antalaron@antalaron.hu",
+    "url": "https://antalaron.hu"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:gitBranchNotes.openNote"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitBranchNotes.openNote",
+        "title": "Open Git Branch Note"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "ctrl+k ctrl+n",
+        "command": "gitBranchNotes.openNote",
+        "when": "editorTextFocus && isLinux || isWindows"
+      },
+      {
+        "key": "cmd+k cmd+n",
+        "command": "gitBranchNotes.openNote",
+        "when": "editorTextFocus && isMac"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "build": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.70.0",
+    "typescript": "^5.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antalaron/git-branch-notes"
+  },
+  "bugs": {
+    "url": "https://github.com/antalaron/git-branch-notes/issues"
+  },
+  "homepage": "https://github.com/antalaron/git-branch-notes",
+  "files": [
+    "dist"
+  ],
+  "icon": "icon.png"
+}
